@@ -16,7 +16,7 @@ name = [
         "That guy from Transurban",
         "Dan with the van",
         "d4n0",
-        "01100100 01100001 01101110 00001101 00001010",
+        "01100100 01100001 01101110",
         "The ring bearer",
         "Ring-a-ding-ding",
         "Frodo",
