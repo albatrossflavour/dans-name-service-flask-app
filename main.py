@@ -1,31 +1,26 @@
 import random
 from flask import Flask
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+
+# Use the application default credentials
+cred = credentials.ApplicationDefault()
+firebase_admin.initialize_app(cred, {
+  'projectId': 'dans-name-service',
+})
+
+db = firestore.client()
+
+names_ref = db.collection(u'names')
+docs = names_ref.stream()
+name = []
+
+for doc in docs:
+    line = doc.to_dict()
+    name.append(line['name'])
 
 app = Flask(__name__)
-
-name = [
-        "Ringo",
-        "Danny Boy",
-        "Ringmaster",
-        "Dan the man",
-        "New guy",
-        "Danno",
-        "He who books people",
-        "Book him Danno",
-        "Not Paul, George or John",
-        "That guy from Transurban",
-        "Dan with the van",
-        "d4n0",
-        "01100100 01100001 01101110",
-        "The ring bearer",
-        "Ring-a-ding-ding",
-        "Frodo",
-        "DR",
-        "DRing",
-        "Oh Danny Boy",
-        "https://en.wikipedia.org/wiki/List_of_people_named_Daniel",
-        "Dan"
-        ]
 
 @app.route("/")
 def index():
