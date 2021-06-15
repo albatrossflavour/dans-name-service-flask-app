@@ -23,6 +23,7 @@ name = [
         "DR",
         "DRing",
         "Oh Danny Boy",
+        "https://en.wikipedia.org/wiki/List_of_people_named_Daniel",
         "Dan"
         ]
 
